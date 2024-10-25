@@ -1,0 +1,80 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #38b6ff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 800px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin-bottom: 3%;
+    margin-top: 1%;
+}
+
+.container h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 10vh;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+.logo_pic img{
+    width: 15%;
+}
+
+.logo_pic h5{
+    color: #004aad;
+    font-size: 24px;
+}
+
+.welcome{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome h1{
+    color: #333;
+    font-size: 64px;
+    font-weight: bold;
+}
+
+.link{
+    color: black;
+    display: flex;
+    align-items: center; /* Align items vertically */
+    text-decoration: none; /* Remove default underline */
+}
+
+.icon{
+    width: 20px; /* Adjust width as needed */
+    height: 20px; /* Maintain aspect ratio */
+    margin-right: 10px; /* Adjust spacing between image and text */
+}
+
+.home {
+    color: black;
+    font-size: 17px;
+    font-weight: bold;
+}

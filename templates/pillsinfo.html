@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pills Info</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="static/pills_style.css">
+
+    <style>
+        .container{
+            background-color: white;
+            border: 1px solid grey;
+            border-radius: 10px;
+            margin-bottom: 3%;
+            margin-top: 1%;
+            padding: 20px;
+        }
+
+        .toggle_button{
+            background-color: #C9D7DD;
+            color: black;
+            border: none; padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block; font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 3px;
+        }
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo_pic">
+        <img src="static\medibox2.png" alt="MediBox">
+        <h5>MediBox</h5>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; margin-top: 80px">
+        <button onclick="toggleReload()" class="toggle_button">Stop Live</button>
+        <div class="toggle_button">
+            <a class="link" href="http://127.0.0.1:5000">
+                <img class="icon" src="static\home.png">
+                <h3 class="home">Home</h3>
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div style="background-color: white;">
+                    <h4 style="color: #003f5c; font-size: 24px; font-weight: bold; text-align: center;">History of Taking Medicine</h4>
+                    <div style="background-color: white; height: 220px; overflow-y: scroll">
+                        <table class="table">
+                            <thead class="sticky-header">
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Amount</th>
+                                    <th>Pills</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 {% for data in data|reverse %}
+                                     <tr>
+                                         <td>{{ data.time }}</td>
+                                         <td>{{ data.amount }}</td>
+                                         <td>{{ data.pills }}</td>
+                                     </tr>
+                                 {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+            var autoReloadInterval;
+
+            window.onload = function() {
+                // Set an interval for automatic reload every 3000 milliseconds (3 seconds)
+                autoReloadInterval = setInterval(function() {
+                    location.reload(true);
+                }, 1000);
+            };
+
+            function toggleReload() {
+                var button = document.querySelector('button');
+
+                if (autoReloadInterval) {
+                    // Stop the automatic reload
+                    clearInterval(autoReloadInterval);
+                    autoReloadInterval = null;
+
+                    // Change button text to "Reload"
+                    button.textContent = 'Live';
+                } else {
+                    // Start the automatic reload
+                    autoReloadInterval = setInterval(function() {
+                        location.reload(true);
+                    }, 1000);
+
+                    // Change button text to "Stop"
+                    button.textContent = 'Stop Live';
+                }
+            }
+
+            function manualReload() {
+                // Stop the automatic reload
+                clearInterval(autoReloadInterval);
+                autoReloadInterval = null;
+
+                // Manual reload when the button is clicked
+                location.reload(true);
+            }
+    </script>
+</body>
+</html>

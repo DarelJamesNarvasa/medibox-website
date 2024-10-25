@@ -1,0 +1,79 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #38b6ff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #edeefa99;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    transition: max-width 1s ease, background-color 1s ease;
+}
+
+.container:hover {
+    max-width: 830px;
+    background-color: #50C4ED;
+}
+.container h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 10vh;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+.logo_pic img{
+    width: 15%;
+}
+
+.logo_pic h5{
+    color: #004aad;
+    font-size: 24px;
+}
+
+.welcome{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome h1{
+    color: #333;
+    font-size: 64px;
+    font-weight: bold;
+}
+
+.link{
+    color: black;
+    display: flex;
+    align-items: center; /* Align items vertically */
+    text-decoration: none; /* Remove default underline */
+}
+
+.icon{
+    width: 30px; /* Adjust width as needed */
+    height: 30px; /* Maintain aspect ratio */
+    margin-right: 10px; /* Adjust spacing between image and text */
+}
+
