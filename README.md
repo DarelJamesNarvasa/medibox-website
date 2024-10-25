@@ -1,5 +1,5 @@
 
-https://github.com/user-attachments/assets/4142791c-1511-4a10-bea9-bea42c21d745
+
 # medibox-website
 
 - Develop a website for medicine monitoring using HTML, CSS, JavaScript, and the Flask framework in Python. 
@@ -26,6 +26,7 @@ Setup:
 3. Install dependencies using 'pip install <package>'
 
 Output:
-https://github.com/user-attachments/assets/c6259935-62e5-48a7-9f3f-259c34075fbb
+
+https://github.com/user-attachments/assets/4142791c-1511-4a10-bea9-bea42c21d745
 
 
